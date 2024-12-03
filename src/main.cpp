@@ -8,8 +8,13 @@
 #include "templates/GpioFake.hpp"
 #include "templates/GpioReal.hpp"
 
+#include "concepts/GpioBase.hpp"
+#include "concepts/GpioReal.hpp"
+#include "concepts/App.hpp"
+
 namespace tpl = templates;
 namespace vm = virtual_methods;
+namespace cpt = concepts;
 
 int main() {
     //================================================================================================//
@@ -39,6 +44,15 @@ int main() {
     {
         tpl::GpioFake fakeGpio;
         tpl::App app(fakeGpio);
+        app.run();
+    }
+
+    //================================================================================================//
+    // STATIC POLYMORPHISM WITH CONCEPTS
+    //================================================================================================//
+    {
+        cpt::GpioReal realGpio;
+        cpt::App app(realGpio);
         app.run();
     }
 

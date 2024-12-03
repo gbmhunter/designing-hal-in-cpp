@@ -1,19 +1,19 @@
 #pragma once
 
-#include "LedBase.hpp"
+#include "GpioBase.hpp"
 
 namespace virtual_methods {
 
 class App {
 public:
-    App(LedBase& led) : led(led) {}
+    App(virtual_methods::GpioBase &gpio) : gpio(gpio) {}
 
     void run() {
-        led.set(1);
+        gpio.set(1);
     }
 
 private:
-    LedBase& led;
+    GpioBase& gpio;
 };
 
 } // namespace templates

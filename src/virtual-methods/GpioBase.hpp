@@ -4,7 +4,11 @@
 
 namespace virtual_methods {
 
-class LedBase {
+class Test {
+
+};
+
+class GpioBase {
 public:
     virtual void set(uint8_t value) = 0;
 };

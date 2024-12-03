@@ -3,11 +3,11 @@
 #include <cstdint>
 #include <cstdio>
 
-#include "LedBase.hpp"
+#include "GpioBase.hpp"
 
 namespace virtual_methods {
 
-class LedFake : public LedBase {
+class GpioReal : public GpioBase {
 public:
     void set(uint8_t value) override {
         printf("%s() called with value: %d\n", __PRETTY_FUNCTION__, value);

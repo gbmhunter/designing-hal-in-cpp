@@ -1,20 +1,20 @@
 #pragma once
 
-#include "LedBase.hpp"
+#include "GpioBase.hpp"
 
 namespace templates {
 
 template <typename T>
 class App {
 public:
-    App(LedBase<T>& led) : led(led) {}
+    App(GpioBase<T>& gpio) : gpio(gpio) {}
 
     void run() {
-        led.set(1);
+        gpio.set(1);
     }
 
 private:
-    LedBase<T>& led;
+    GpioBase<T>& gpio;
 };
 
 } // namespace templates

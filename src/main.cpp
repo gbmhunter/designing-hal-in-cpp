@@ -1,12 +1,12 @@
 #include <cstdio>
 
 #include "virtual-methods/App.hpp"
-#include "virtual-methods/LedFake.hpp"
-#include "virtual-methods/LedReal.hpp"
+#include "virtual-methods/GpioFake.hpp"
+#include "virtual-methods/GpioReal.hpp"
 
 #include "templates/App.hpp"
-#include "templates/LedFake.hpp"
-#include "templates/LedReal.hpp"
+#include "templates/GpioFake.hpp"
+#include "templates/GpioReal.hpp"
 
 namespace tpl = templates;
 namespace vm = virtual_methods;
@@ -16,14 +16,14 @@ int main() {
     // VIRTUAL METHODS
     //================================================================================================//
     {
-        vm::LedReal realLed;
-        vm::App app(realLed);
+        vm::GpioReal realGpio;
+        vm::App app(realGpio);
         app.run();
     }
 
     {
-        vm::LedFake fakeLed;
-        vm::App app(fakeLed);
+        vm::GpioFake fakeGpio;
+        vm::App app(fakeGpio);
         app.run();
     }
 
@@ -31,14 +31,14 @@ int main() {
     // STATIC POLYMORPHISM WITH TEMPLATES
     //================================================================================================//
     {
-        tpl::LedReal realLed;
-        tpl::App app(realLed); // Template parameter deduction, no <LedReal> needed!
+        tpl::GpioReal realGpio;
+        tpl::App app(realGpio); // Template parameter deduction, no <GpioReal> needed!
         app.run();
     }
 
     {
-        tpl::LedFake fakeLed;
-        tpl::App app(fakeLed);
+        tpl::GpioFake fakeGpio;
+        tpl::App app(fakeGpio);
         app.run();
     }
 

@@ -1,16 +1,17 @@
 #pragma once
 
+#include <cstdint>
 #include <cstdio>
 
 #include "LedBase.hpp"
 
-namespace templates {
+namespace virtual_methods {
 
-class LedFake : public LedBase<LedFake> {
+class LedFake : public LedBase {
 public:
-    void set(uint8_t value) {
+    void set(uint8_t value) override {
         printf("%s() called with value: %d\n", __PRETTY_FUNCTION__, value);
     }
 };
 
-} // namespace templates
+} // namespace virtual_methods

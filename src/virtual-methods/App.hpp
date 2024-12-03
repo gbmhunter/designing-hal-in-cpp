@@ -2,19 +2,18 @@
 
 #include "LedBase.hpp"
 
-namespace templates {
+namespace virtual_methods {
 
-template <typename T>
 class App {
 public:
-    App(LedBase<T>& led) : led(led) {}
+    App(LedBase& led) : led(led) {}
 
     void run() {
         led.set(1);
     }
 
 private:
-    LedBase<T>& led;
+    LedBase& led;
 };
 
 } // namespace templates

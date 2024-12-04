@@ -1,6 +1,8 @@
 #pragma once
 
-#include "GpioBase.hpp"
+#include "concepts-no-inheritance/GpioBase.hpp"
+
+namespace concepts_no_inheritance {
 
 template <typename T>
 class App {
@@ -14,3 +16,5 @@ public:
 private:
     GpioBase<T>& gpio;
 };
+
+} // namespace concepts_no_inheritance

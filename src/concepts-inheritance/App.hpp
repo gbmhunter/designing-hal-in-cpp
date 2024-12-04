@@ -2,8 +2,6 @@
 
 #include "GpioBase.hpp"
 
-namespace concepts {
-
 template <typename T>
 class App {
 public:
@@ -16,5 +14,3 @@ public:
 private:
     GpioBase<T>& gpio;
 };
-
-} // namespace concepts

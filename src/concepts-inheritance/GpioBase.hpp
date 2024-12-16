@@ -5,7 +5,7 @@
 
 template <typename T>
 concept Gpio = requires(T t, uint8_t value) {
-    { t.set(value) } -> std::same_as<void>;
+    { t.set_impl(value) } -> std::same_as<void>;
 };
 
 // Empty base class, the concept will force the derived class to implement the set method
@@ -17,7 +17,6 @@ public:
     }
 
     void set(uint8_t value) {
-        printf("Calling set()\n");
-        static_cast<T&>(*this).set(value);
+        static_cast<T&>(*this).set_impl(value);
     }
 };
